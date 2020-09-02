@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hyperjob</title>
+
+
+</head>
+<body>
+<h2>Welcome to HyperJob!</h2>
+
+<div><a href="/login"> Login </a></div>
+<div><a href="/signup">Signup </a></div>
+<div><a href="/vacancies">Vacancies </a></div>
+<div><a href="/resumes">Resumes </a></div>
+<div><a href="/home">Home </a></div>
+<p></p>
+
+{% if user.is_authenticated %}
+    <div><a href="logout"> LOGOUT </a></div>
+{% endif %}
+
+</body>
+</html>

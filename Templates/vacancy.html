@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+STRANICHKA VACANSIY
+{% for vacancy in qs%}
+    <div>{{vacancy.author.username}}: {{vacancy.description}} </div>
+
+{% endfor %}
+
+
+
+</body>
+</html>

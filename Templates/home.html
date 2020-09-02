@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>ENTO HOME PAGE</h1>
+
+{% if request.user.is_staff %}
+    <h2> Vacancy Creation Form!</h2>
+    <form action="{% url "vacancy:new_vacancy" %}" method="post">
+        {% csrf_token %}
+        {{ vacancy_form }}
+        <input type="submit" value="Submit">
+        {{ vacancy_form.errors }}
+    </form>
+{% else %}
+    <h2> Resume Creation Form!</h2>
+    <form action="{% url "resume:new_resume" %}" method="post">
+        {% csrf_token %}
+        {{ resume_form }}
+        <input type="submit" value="Submit">
+    </form>
+
+{% endif %}
+
+
+<h2> THIS IS LIST OF RESUME</h2>
+{%for resume in resumes %}
+
+<div> {{resume.author.username}}: {{resume.description}} </div>
+
+{% endfor %}
+
+
+
+
+<h2> THIS IS LIST OF VACANSY</h2>
+
+{% for vacancy in vacancys%}
+    <div>{{vacancy.author.username}}: {{vacancy.description}} </div>
+
+{% endfor %}
+
+
+
+
+
+</body>
+</html>
