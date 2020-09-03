@@ -1,10 +1,9 @@
 from django.shortcuts import render, redirect
 from django.views.generic.base import View
-from django.contrib.auth.decorators import login_required
 from django.core.exceptions import PermissionDenied
-from .form import ResumeCreateForm
+from resume.form import ResumeCreateForm
 
-from .models import Resume
+from resume.models import Resume
 
 
 class ResumeView(View):
